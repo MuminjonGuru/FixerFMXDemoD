@@ -1,0 +1,784 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Button1: TButton
+    Align = MostTop
+    StyledSettings = [Family, Style, FontColor]
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Position.X = 5.000000000000000000
+    Position.Y = 5.000000000000000000
+    Size.Width = 630.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    Text = 'GET'
+    TextSettings.Font.Size = 16.000000000000000000
+    OnClick = Button1Click
+  end
+  object Grid1: TGrid
+    Align = Client
+    CanFocus = True
+    ClipChildren = True
+    Margins.Left = 5.000000000000000000
+    Margins.Top = 5.000000000000000000
+    Margins.Right = 5.000000000000000000
+    Size.Width = 630.000000000000000000
+    Size.Height = 448.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    RowCount = 1
+    Viewport.Width = 626.000000000000000000
+    Viewport.Height = 407.000000000000000000
+  end
+  object RESTClient1: TRESTClient
+    Accept = 'application/json, text/plain; q=0.9, text/html;q=0.8,'
+    AcceptCharset = 'utf-8, *;q=0.8'
+    BaseURL = 'http://data.fixer.io/api/latest'
+    Params = <>
+    Left = 96
+    Top = 48
+  end
+  object RESTRequest1: TRESTRequest
+    AssignedValues = [rvConnectTimeout, rvReadTimeout]
+    Client = RESTClient1
+    Params = <
+      item
+        Name = 'access_key'
+        Value = '9b3bf0619181d7939a977c216c9f2fde'
+      end>
+    Response = RESTResponse1
+    Left = 96
+    Top = 104
+  end
+  object RESTResponse1: TRESTResponse
+    ContentType = 'application/json'
+    RootElement = 'rates'
+    Left = 96
+    Top = 160
+  end
+  object RESTResponseDataSetAdapter1: TRESTResponseDataSetAdapter
+    Active = True
+    Dataset = FDMemTable1
+    FieldDefs = <>
+    Response = RESTResponse1
+    TypesMode = Rich
+    NestedElements = True
+    Left = 96
+    Top = 216
+  end
+  object FDMemTable1: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'AED'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AFN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ALL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AMD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ANG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AOA'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ARS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AUD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AWG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'AZN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BAM'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BBD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BDT'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BGN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BHD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BIF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BMD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BND'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BOB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BRL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BSD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BTC'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BTN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BWP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BYN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BYR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'BZD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CAD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CDF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CHF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CLF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CLP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CNY'
+        DataType = ftFloat
+      end
+      item
+        Name = 'COP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CRC'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CUC'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CUP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CVE'
+        DataType = ftFloat
+      end
+      item
+        Name = 'CZK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'DJF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'DKK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'DOP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'DZD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'EGP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ERN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ETB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'EUR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'FJD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'FKP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GBP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GEL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GGP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GHS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GIP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GMD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GNF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GTQ'
+        DataType = ftFloat
+      end
+      item
+        Name = 'GYD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'HKD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'HNL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'HRK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'HTG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'HUF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'IDR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ILS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'IMP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'INR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'IQD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'IRR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ISK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'JEP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'JMD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'JOD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'JPY'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KES'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KGS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KHR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KMF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KPW'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KRW'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KWD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KYD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'KZT'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LAK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LBP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LKR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LRD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LSL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LTL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LVL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'LYD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MAD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MDL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MGA'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MKD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MMK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MNT'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MOP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MRO'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MUR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MVR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MWK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MXN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MYR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'MZN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NAD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NGN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NIO'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NOK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NPR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'NZD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'OMR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PAB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PEN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PGK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PHP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PKR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PLN'
+        DataType = ftFloat
+      end
+      item
+        Name = 'PYG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'QAR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'RON'
+        DataType = ftFloat
+      end
+      item
+        Name = 'RSD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'RUB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'RWF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SAR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SBD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SCR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SDG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SEK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SGD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SHP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SLL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SOS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SRD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'STD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SVC'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SYP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'SZL'
+        DataType = ftFloat
+      end
+      item
+        Name = 'THB'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TJS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TMT'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TND'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TOP'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TRY'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TTD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TWD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'TZS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'UAH'
+        DataType = ftFloat
+      end
+      item
+        Name = 'UGX'
+        DataType = ftFloat
+      end
+      item
+        Name = 'USD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'UYU'
+        DataType = ftFloat
+      end
+      item
+        Name = 'UZS'
+        DataType = ftFloat
+      end
+      item
+        Name = 'VEF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'VND'
+        DataType = ftFloat
+      end
+      item
+        Name = 'VUV'
+        DataType = ftFloat
+      end
+      item
+        Name = 'WST'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XAF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XAG'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XAU'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XCD'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XDR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XOF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'XPF'
+        DataType = ftFloat
+      end
+      item
+        Name = 'YER'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ZAR'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ZMK'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ZMW'
+        DataType = ftFloat
+      end
+      item
+        Name = 'ZWL'
+        DataType = ftFloat
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    StoreDefs = True
+    Left = 96
+    Top = 272
+  end
+  object BindSourceDB1: TBindSourceDB
+    DataSet = FDMemTable1
+    ScopeMappings = <>
+    Left = 304
+    Top = 224
+  end
+  object BindingsList1: TBindingsList
+    Methods = <>
+    OutputConverters = <>
+    Left = 20
+    Top = 5
+    object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      GridControl = Grid1
+      Columns = <>
+    end
+  end
+end
